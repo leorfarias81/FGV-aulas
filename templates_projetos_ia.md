@@ -129,3 +129,13 @@ Utilize este roteiro para resumir projetos complexos de IA para a Diretoria, Sta
 - **Impacto Esperado:** [Métrica principal focada em negócio, ex: Expectativa de redução de X% em perdas financeiras]
 - **Validação Segura:** [Período de testes controlados (Shadow Mode / Teste A/B) antes da virada oficial em produção]
 - **Próximos Passos (Roadmap):** [Ações imediatas e cronograma macro para a entrega do MVP]
+
+---
+
+## 4. Template para Criação Interativa de Notebook de Projeto
+
+Utilize este prompt direto para instruir o ChatGPT (ou outra IA) a analisar a estrutura dos projetos já existentes no repositório da FGV e criar um novo Jupyter Notebook alinhado a esse padrão. A instrução força a IA a trabalhar de forma iterativa, validando decisões com você antes de escrever o código.
+
+```text
+Utilize os exemplos de projetos (https://github.com/mfidosjr/FGV-aulas/tree/main/aplicacoes-de-negocio) para criar um notebook de um projeto de IA (anexa o seu pdf) .... – trabalhe de modo iterativo, e me pergunte sobre todas as decisões antes de criar o projeto.
+```
