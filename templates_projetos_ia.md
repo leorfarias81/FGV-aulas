@@ -1,61 +1,69 @@
 # Kit de Templates: Projetos de Inteligência Artificial
 
-Este documento consolida os templates estruturados para criação, planejamento e apresentação de projetos de IA.
+Este documento consolida os templates estruturados para criação de prompts, planejamento técnico e apresentação de projetos de IA.
 
 ---
 
-## 1. Template de Prompt Foco em IA (Framework de 14 Passos)
+## 1. Template 1: Criação de Prompts (Genérico)
 
-Copie e cole a estrutura abaixo no ChatGPT/Gemini/Claude para obter respostas de altíssima qualidade ao solicitar a criação de projetos, códigos ou planejamentos de IA. Preencha os campos em `[colchetes]`.
+Copie esta estrutura em branco e preencha os campos para criar qualquer tipo de prompt avançado, seguindo estritamente os 14 passos estruturais.
 
 **1. Objetivo (Finalidade & Público-alvo)**
-Desenvolver [descreva o que você quer, ex: um documento técnico / um script em Python] para um projeto de Inteligência Artificial focado em [Problema de Negócio]. O público-alvo é [quem vai ler/usar].
+- O que entregar e para quem (ex.: gestor, leigo, equipe técnica).
+- `[Preencha aqui]`
 
 **2. Papel (Role/Tom/Autoridade)**
-Atue como [ex: Cientista de Dados Sênior / Arquiteto de IA]. Use um tom [ex: profissional, técnico, didático].
+- Persona, tom desejado e limites de atuação.
+- `[Preencha aqui]`
 
 **3. Contexto & Dados (Fontes/Não usar)**
-- Dados: [Descreva a base de dados brevemente].
-- O que usar: [ex: Técnicas modernas, boas práticas de MLOps].
-- O que NÃO usar: [ex: Algoritmos defasados, jargões desnecessários].
+- Que dados/links usar; o que não usar; premissas e limites.
+- `[Preencha aqui]`
 
 **4. Tarefa (Instrução explícita)**
-Sua tarefa é [descreva detalhadamente o que a IA deve fazer].
-Aborde os seguintes pontos:
-- [Ponto 1]
-- [Ponto 2]
+- Passos/entregáveis concretos (ex.: "avaliar", "comparar", "sintetizar").
+- `[Preencha aqui]`
 
 **5. Escopo & Restrições (Tempo/Segurança/Conformidade)**
-- Tecnologias permitidas: [ex: Python, Scikit-learn, SQL].
-- Conformidade: [ex: Respeitar a LGPD e remover PII].
+- Prazos, ferramentas permitidas, privacidade, referências obrigatórias.
+- `[Preencha aqui]`
 
 **6. Definições operacionais**
-- [Termo 1]: [Definição para alinhar o entendimento, ex: "MVP" = Produto Mínimo Viável focado em 1 única funcionalidade].
+- Conceitos que regem a avaliação/produção (ex.: "clareza", "objetividade").
+- `[Preencha aqui]`
 
 **7. Critérios de avaliação / Rubrica (Definition of Done)**
-A resposta será avaliada com base em: [ex: Clareza técnica, viabilidade de implementação no contexto atual].
+- Critérios mensuráveis e limiares de aceitação (ex.: alta/moderada/baixa; 0-2 por critério).
+- `[Preencha aqui]`
 
 **8. Formato de saída (Contrato)**
-A saída deve ser em formato Markdown, contendo seções claras e [ex: blocos de código documentados].
+- Preferir JSON Schema / function calling; alternativa: Markdown com seções obrigatórias.
+- Campos required, limites de tamanho, política para ausências (null).
+- `[Preencha aqui]`
 
 **9. Regras para ambiguidade e ausência de dados**
-Se faltarem informações estruturais para o desenho final, [ex: faça até 3 perguntas antes de gerar a resposta / assuma premissas e liste-as no início do texto].
+- Quando devolver "Insuficiente"; quando perguntar antes de responder; mensagens de erro padrão.
+- `[Preencha aqui]`
 
 **10. Estilo de resposta**
-Tom estruturado, direto, utilizando listas (bullet points) e negrito para destacar conceitos.
+- Tom profissional, conciso, estruturado; evitar juízos subjetivos.
+- `[Preencha aqui]`
 
 **11. Formato de resposta (skeleton canônico)**
-Siga esta estrutura exata de tópicos:
-[Cole aqui a estrutura de títulos (H1, H2, H3) desejada para a saída]
+- Cole aqui o modelo exato de saída (JSON/Markdown) a ser seguido.
+- `[Preencha aqui]`
 
 **12. Exemplos (few-shot curtos)**
-[Forneça um exemplo de entrada e como deve ser a saída, se aplicável, ou apague este tópico].
+- 1-2 exemplos de entrada -> saída aderentes ao contrato.
+- `[Preencha aqui]`
 
 **13. Checks finais (auto-verificação)**
-Antes de gerar a resposta, valide silenciosamente se todos os requisitos, formatos e restrições foram estritamente cumpridos.
+- Validar JSON/sections; checar rubrica; citar fontes/IDs quando aplicável.
+- `[Preencha aqui]`
 
-**14. Notas de design/observabilidade**
-[Opcional, ex: Versão do prompt v1.0. Uso interno no time de dados].
+**14. Notas de design/observabilidade (opcional)**
+- Versão do prompt, parâmetros, seed, logging para auditoria e reuso.
+- `[Preencha aqui]`
 
 ---
 
