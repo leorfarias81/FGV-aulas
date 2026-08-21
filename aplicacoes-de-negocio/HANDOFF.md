@@ -106,9 +106,11 @@ Adicionar, em cada um dos 13 notebooks, uma seção explicitando que os dados s�
 
 Adicionar, em cada um dos 13 notebooks, uma célula de markdown ao final propondo um exercício/pergunta aberta para o aluno tentar por conta própria (ex.: "e se a taxa de fraude fosse 1% em vez de 4%? o que muda?"). Deve ser específico da técnica/domínio de cada notebook, não um exercício genérico copiado entre eles.
 
-### ⬜ Item 4 — Fix técnico do notebook 01 (PENDENTE)
+### ✅ Item 4 — Fix técnico do notebook 01 (CONCLUÍDO)
 
-O MLPClassifier do notebook 01 (fraude) colapsa (precisão/recall/F1 = 0,000) na maioria das seeds, mesmo após aumentar o dataset para 20.000 transações (commit `397564c`). Causa raiz: `MLPClassifier` do scikit-learn **não tem** parâmetro `class_weight` (diferente da `LogisticRegression`, que usa `class_weight="balanced"`), então ele aprende a sempre prever a classe majoritária num dataset desbalanceado (~4% fraude). Correção sugerida (ainda não implementada): oversampling da classe minoritária no treino (ex.: `RandomOverSampler` do imbalanced-learn, ou duplicar manualmente exemplos de fraude no treino), e/ou ajustar o limiar de decisão (usar `predict_proba` + limiar customizado em vez do padrão 0,5) em vez de usar `.predict()` puro. Deve ser feito de forma honesta: reportar o resultado real, seja ele qual for.
+Causa raiz confirmada: `MLPClassifier` do scikit-learn não tem parâmetro `class_weight` (diferente da `LogisticRegression`, que usa `class_weight="balanced"`), então ele aprende a sempre prever a classe majoritária num dataset desbalanceado (~4% fraude). Fix implementado: nova seção "11. Corrigindo o colapso do MLP: balanceamento de classes no treino", que reamostra (com reposição, via `sklearn.utils.resample`) a classe minoritária **só no treino** até igualar a classe majoritária, mantendo o teste com a proporção real de fraude. Testado nas mesmas 3 seeds (42, 7, 123).
+
+**Resultado real:** o oversampling elimina o colapso (não há mais 0,000 em nenhuma seed) e estabiliza o MLP — recall passa a ficar entre 0,498 e 0,530 nas 3 seeds (desvio-padrão cai de 0,028 para 0,016). O F1 do MLP corrigido (média 0,204) passa a **superar o do baseline (0,166)** nas 3 seeds, pois a precisão também melhora bastante (0,128 vs 0,096). Porém o **recall do baseline continua maior** (0,607 vs 0,512) — o baseline ainda captura mais fraudes reais, só que com muito mais falsos alarmes. Veredito: a correção resolve a instabilidade e torna o MLP competitivo (e melhor em F1), mas não o transforma em vencedor incondicional — a escolha entre os dois depende do custo relativo de falso positivo vs falso negativo que o negócio adota.
 
 ### ⬜ Item 5 — Fix técnico do notebook 10 (PENDENTE)
 
